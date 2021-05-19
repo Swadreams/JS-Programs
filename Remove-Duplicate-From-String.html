@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var input = "AbraCadABraAlakAza";
+        function removeDoubles(string) {
+            var newString = '';
+            for (var i = 0; i < string.length; i++) {
+                if (newString.indexOf(string[i].toLowerCase()) === -1 && newString.indexOf(string[i].toUpperCase()) === -1) {
+                    newString += string[i];
+                }
+            }
+            return newString;
+        }
+        let unique = removeDoubles('AaBbCc');
+        console.log(unique);
+    </script>
+</body>
+
+</html>
