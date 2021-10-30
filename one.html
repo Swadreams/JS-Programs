@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="showValue()"> Increase Count</button>
+
+    <script>
+
+        // (function () {
+        //     'use strict'
+        //     var sonam = {};
+        //     // Object.defineProperty(sonam, 'pi', { value: 3.14, writable: false });
+        //     sonam.pi = 4352;
+        //     console.log(sonam.pi);
+
+        // })();
+
+        // function Mathematics(name, age) {
+        //     this.name = name,
+        //     this.age = age;
+        //     //this.pi = 3.14;
+        // }
+
+        // Mathematics.prototype.pi = 3.14;
+
+        // var math = new Mathematics('abc', 10);
+
+        // var math1 = new Mathematics('cde', 20);
+
+        function counter() {
+            count = 0;
+            return function () {
+                return count++;
+            }
+        }
+
+        const countValue = counter();
+
+        function showValue() {
+            console.log(countValue());
+        }
+
+    </script>
+</body>
+
+</html>

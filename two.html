@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* width: 200;
+            height: 300; */
+            border: 1px solid black;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        Div 1
+        <div id="div2">
+            Div 2
+            <div id="div3">
+                Div 3
+            </div>
+        </div>
+    </div>
+
+    <a href="http://pragimtech.com" onclick="preventLinkNavigation(event)">
+        Clicking on the link will not take you to PragimTech
+    </a>
+
+    <script>
+        const divs = document.getElementsByTagName('div');
+        // for (let i = 0; i < divs.length; i++) {
+        //     divs[i].onclick = function (event) {
+        //         event = event || window.event;
+
+        //         if (event) {
+        //             event.stopPropagation();
+        //         } else {
+        //             event.cancelBubble = true;
+        //         }
+
+        //         this.style.borderColor = 'red';
+        //         alert(this.getAttribute('id') + 'Background changed..');
+        //     }
+        // }
+        divs[0].onclick = function (event) {
+            this.style.borderColor = 'red';
+        }
+
+        function preventLinkNavigation(event) {
+            event = event || window.event;
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false
+            }
+        }
+    </script>
+
+</body>
+
+</html>
